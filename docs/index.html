@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search docs</title>
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/default.min.css">
+	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
+</head>
+<body>
+	<h1>Search.js tutorial</h1>
+	Using search is extremely simple . Lets say you need to run a search with a input through a set of FAQ's on your website . For example purposes , my FAQs will just be a few p elements .
+
+	<pre><code class="language-html">&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;</code></pre>
+	
+	<p>Let's start by preparing these for search . Wrap all the elements you want to search through in a div with a unique id .</p>
+
+		<pre><code class="language-html">&lt;div id='uniqueID1'&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;
+&lt;div &gt;</code></pre>
+
+Next add a input to your DOM.
+		<pre><code class="language-html">&lt;input type='text' id='searchBar1'&gt;
+&lt;div id='uniqueID1'&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
+	&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;
+&lt;div &gt;</code></pre>
+
+<p>That's it for preparing . Next import search if you haven't before .Since search works in javascript , add some script tags to your page to activate the search .Inside the script tags , call the following function anywhere. </p>
+<pre><code class="language-js">search(wrapperDIVid,searchElemClass,inputId)</code></pre>
+
+The first argument should have an element , namely the wrapper div. In our case the id of the wrapper is uniqueID1. Therefore the first argument should be :
+
+<pre><code class="language-js">document.getElementById('uniqueID1')</code></pre>
+
+<p>The searchElemClass argument should have the common id of the elements that have to be searched through. In our case the id is myFAQs .Therefore the second argument should be :
+ </p>
+ <pre><code class="language-js">document.querySelectorAll('myFAQs')</code></pre>
+
+ Make sure to sure to use querySelectorAll <b>only</b>.
+
+ <p>The third argument should be the input : </p>
+  <pre><code class="language-js">document.getElementById('searchBar1')</code></pre>
+
+  The function now looks like this :
+
+ <pre><code class="language-js">search(document.getElementById('uniqueID1'),document.querySelectorAll('myFAQs') , document.getElementById('searchBar1'))</code></pre> 
+
+ That's it , you can now run it ! Example below .
+
+<br><br><br>
+<input type='text' id='searchBar1'> <br>
+<div id='uniqueID1'>
+	<p class='myFAQs'> FAQ answer 1 - this is a test line 28651<p>
+	<p class='myFAQs'> FAQ answer 2 - this is not a test line 28651 <p>
+	<p class='myFAQs'> FAQ answer 3 - 7787 true<p>
+	<p class='myFAQs'> FAQ answer 4 - w87238 false<p>
+<div >
+
+	<script>hljs.highlightAll(); 
+search(document.getElementById('uniqueID1'),document.querySelectorAll('myFAQs') , document.getElementById('searchBar1'))
+</script>
+
+</body>
+</html>
