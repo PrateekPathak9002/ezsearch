@@ -1,2 +1,2 @@
 # search
-Make a search bar , with nothing but a class .
+Make a completly functional search bar , with nothing but a class .
