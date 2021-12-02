@@ -1,0 +1,22 @@
+{
+  "name": "ezsearch",
+  "version": "1.0.0",
+  "description": "This package helps you create a functional search bar within minutes .",
+  "main": "search.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrateekPathak9002/search.git"
+  },
+  "author": "prateek12",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrateekPathak9002/search/issues"
+  },
+  "homepage": "https://github.com/PrateekPathak9002/search#readme"
+}
