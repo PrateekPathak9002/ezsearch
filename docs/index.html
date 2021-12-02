@@ -6,6 +6,7 @@
 	<title>Search docs</title>
 	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/default.min.css">
 	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
+	<script src="https://unpkg.com/ezsearch@1.0.0/search.js"></script>
 </head>
 <body>
 	<h1>Search.js tutorial</h1>
@@ -43,7 +44,7 @@ The first argument should have an element , namely the wrapper div. In our case 
 
 <p>The searchElemClass argument should have the common id of the elements that have to be searched through. In our case the id is myFAQs .Therefore the second argument should be :
  </p>
- <pre><code class="language-js">document.querySelectorAll('myFAQs')</code></pre>
+ <pre><code class="language-js">document.querySelectorAll('.myFAQs')</code></pre>
 
  Make sure to sure to use querySelectorAll <b>only</b>.
 
@@ -52,7 +53,7 @@ The first argument should have an element , namely the wrapper div. In our case 
 
   The function now looks like this :
 
- <pre><code class="language-js">search(document.getElementById('uniqueID1'),document.querySelectorAll('myFAQs') , document.getElementById('searchBar1'))</code></pre> 
+ <pre><code class="language-js">search(document.getElementById('uniqueID1'),document.querySelectorAll('.myFAQs') , document.getElementById('searchBar1'))</code></pre> 
 
  That's it , you can now run it ! Example below .
 
@@ -60,13 +61,13 @@ The first argument should have an element , namely the wrapper div. In our case 
 <input type='text' id='searchBar1'> <br>
 <div id='uniqueID1'>
 	<p class='myFAQs'> FAQ answer 1 - this is a test line 28651<p>
-	<p class='myFAQs'> FAQ answer 2 - this is not a test line 28651 <p>
+	<p class='myFAQs'> FAQ answer 2 - this is not a test line 28651546 <p>
 	<p class='myFAQs'> FAQ answer 3 - 7787 true<p>
 	<p class='myFAQs'> FAQ answer 4 - w87238 false<p>
 <div >
 
 	<script>hljs.highlightAll(); 
-search(document.getElementById('uniqueID1'),document.querySelectorAll('myFAQs') , document.getElementById('searchBar1'))
+search(document.getElementById('uniqueID1'),document.querySelectorAll('.myFAQs') , document.getElementById('searchBar1'))
 </script>
 
 </body>
