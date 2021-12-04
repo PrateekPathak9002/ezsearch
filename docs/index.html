@@ -6,7 +6,7 @@
 	<title>Search docs</title>
 	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/default.min.css">
 	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.3.1/highlight.min.js"></script>
-	<script src="https://unpkg.com/ezsearch/search.js"></script>
+	<script src="https://unpkg.com/ezsearch@1.0.1/search.js"></script>
 </head>
 <body>
 	<h1>Search.js tutorial</h1>
@@ -38,22 +38,24 @@ Next add a input to your DOM.
 
   The function now looks like this :
 
- <pre><code class="language-js">search('.myFAQs','searchBar1')</code></pre> 
+ <pre><code class="language-js">search('.myFAQs','#searchBar1')</code></pre> 
 
- That's it , you can now run it ! Example below .
+That's it , you can now run it now ! <br>
+Remember though, if it doesn't work , check the console . ezsearch.js mostly always logs the errors . <br>
+Example below .
+
 
 <br><br><br>
 <input type='text' id='searchBar1'> <br>
-<div id='uniqueID1'>
-	<p class='myFAQs'> FAQ answer 1 - this is a test line 28651<p>
-	<p class='myFAQs'> FAQ answer 2 - this is not a test line 28651546 <p>
-	<p class='myFAQs'> FAQ answer 3 - 7787 true<p>
-	<p class='myFAQs'> FAQ answer 4 - w87238 false<p>
-<div >
+<p class='myFAQs'> FAQ answer 1 - this is a test line 28651<p>
+<p class='myFAQs'> FAQ answer 2 - this is not a test line 28651546 <p>
+<p class='myFAQs'> FAQ answer 3 - 7787 true<p>
+<p class='myFAQs'> FAQ answer 4 - w87238 false<p>
 
-	<script>hljs.highlightAll(); 
-search(document.getElementById('uniqueID1'),document.querySelectorAll('.myFAQs') , document.getElementById('searchBar1'))
-</script>
+	<script>
+		hljs.highlightAll(); 
+		search('.myFAQs','#searchBar1')
+	</script>
 
 </body>
 </html>
