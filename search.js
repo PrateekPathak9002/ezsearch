@@ -1,29 +1,34 @@
-function search(wrapper,searchOBJS,input) {
-	if (!(typeof wrapper === 'object')) {
-		console.error('search function only accepts an html element as first argument')
+function search(searchOBJS,input) {
+
+	if (searchOBJS.includes('#')) {/*Checks that the second arguement is a class .*/
+		console.error('search.js: search function only accepts an class as second argument')
 		return false
 	}
-	if (searchOBJS[0] === undefined) {
-		console.error('search function only accepts an html nodelist as second argument . Use document.querySelectorAll(".myClass") instead.')
+
+	let sOBJS = document.querySelectorAll(searchOBJS)
+	if (sOBJS[0] == undefined) {
+		console.warning('search.js: The given class does not have any elements associated with it .')
 		return false
 	}
-	if (!(typeof input === 'object')) {
-		console.error('search function only accepts an html element as third argument')
-		return false
+
+
+	let inputLc = document.querySelectorAll(input)[0] /*Lc stands for local*/
+	if (inputLc == undefined) {
+		console.error('search.js: The given id for the input does not have a input associated with it .')
 	}
+
 	console.log('Search :No errors in the arguments .')
-	input.addEventListener('input',()=>{
-		for(var i = 0 ; i < searchOBJS.length ; i++ ){
-			if (!(searchOBJS[i].innerHTML.includes(input.value))) {
-				searchOBJS[i].style.position = 'absolute'
-				searchOBJS[i].style.visibility = 'hidden'
-				console.log(`${searchOBJS[i].innerHTML} and input is ${input.value} `)
+	inputLc.addEventListener('input',()=>{
+		for(var i = 0 ; i < sOBJS.length ; i++ ){
+			if (!(sOBJS[i].innerHTML.includes(inputLc.value))) {
+				sOBJS[i].style.position = 'absolute'
+				sOBJS[i].style.visibility = 'hidden'
+				console.log(`${sOBJS[i].innerHTML} and input is ${inputLc.value} `)
 			}else {
-				searchOBJS[i].style.position = 'relative'
-				searchOBJS[i].style.visibility = 'visible'
+				sOBJS[i].style.position = 'relative'
+				sOBJS[i].style.visibility = 'visible'
 			}
 		}
 		
 	})
-	wrapper.querySelectorAll('p')	
 }

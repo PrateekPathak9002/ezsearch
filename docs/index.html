@@ -17,43 +17,28 @@
 &lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
 &lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;</code></pre>
 	
-	<p>Let's start by preparing these for search . Wrap all the elements you want to search through in a div with a unique id .</p>
-
-		<pre><code class="language-html">&lt;div id='uniqueID1'&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;
-&lt;div &gt;</code></pre>
-
+Of course though , they can be anything .
 Next add a input to your DOM.
 		<pre><code class="language-html">&lt;input type='text' id='searchBar1'&gt;
-&lt;div id='uniqueID1'&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
-	&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;
-&lt;div &gt;</code></pre>
+&lt;p class='myFAQs'&gt; FAQ answer 1&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 2&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 3&lt;p&gt;
+&lt;p class='myFAQs'&gt; FAQ answer 4&lt;p&gt;
+</code></pre>
 
-<p>That's it for preparing . Next import search if you haven't before .Since search works in javascript , add some script tags to your page to activate the search .Inside the script tags , call the following function anywhere. </p>
-<pre><code class="language-js">search(wrapperDIVid,searchElemClass,inputId)</code></pre>
+<p>All right ! You're halfway through ! Next import search if you haven't before .Since search works in javascript , add some script tags to your page to activate the search .Inside the script tags , call the following function anywhere. </p>
+<pre><code class="language-js">search(searchElemClass,inputIdOrClass)</code></pre>
 
-The first argument should have an element , namely the wrapper div. In our case the id of the wrapper is uniqueID1. Therefore the first argument should be :
-
-<pre><code class="language-js">document.getElementById('uniqueID1')</code></pre>
-
-<p>The searchElemClass argument should have the common id of the elements that have to be searched through. In our case the id is myFAQs .Therefore the second argument should be :
+<p>The searchElemClass argument should have the common class of the elements that have to be searched through. In our case the id is myFAQs .Therefore the first argument should be :
  </p>
- <pre><code class="language-js">document.querySelectorAll('.myFAQs')</code></pre>
+ <pre><code class="language-js">'.myFAQs'</code></pre>
 
- Make sure to sure to use querySelectorAll <b>only</b>.
-
- <p>The third argument should be the input : </p>
-  <pre><code class="language-js">document.getElementById('searchBar1')</code></pre>
+ <p>The third argument should be the id of the input : </p>
+  <pre><code class="language-js">'searchBar1'</code></pre>
 
   The function now looks like this :
 
- <pre><code class="language-js">search(document.getElementById('uniqueID1'),document.querySelectorAll('.myFAQs') , document.getElementById('searchBar1'))</code></pre> 
+ <pre><code class="language-js">search('.myFAQs','searchBar1')</code></pre> 
 
  That's it , you can now run it ! Example below .
 
