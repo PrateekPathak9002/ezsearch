@@ -1,6 +1,6 @@
 {
   "name": "ezsearch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package helps you create a functional search bar within minutes .",
   "main": "search.js",
   "directories": {
