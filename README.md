@@ -10,7 +10,7 @@
   <a href="https://prateekpathak9002.github.io/ezsearch/"><strong>View a tutorial»</strong></a>
 </p>
 
-# ezsearch 
+# ezsearch new
 
 
 ## Table of contents
