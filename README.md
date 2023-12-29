@@ -3,7 +3,7 @@
     <img src="https://github.com/PrateekPathak9002/ezsearch/blob/main/logo.png"  width="30%" height="30%">
   </a>
 </p>
-<h3 align="center">ezsearch</h3>
+<h3 align="center">ezsearch223</h3>
 <p align="center">
   Simple , lightweight and quick library to make a functional search bar.
   <br>
